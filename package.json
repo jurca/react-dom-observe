@@ -1,0 +1,36 @@
+{
+  "name": "@jurca/react-dom-observe",
+  "version": "0.0.0",
+  "description": "Utility for observing the lifecycle of DOM elements through React refs.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^3.17.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurca/react-dom-observe.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "ref",
+    "refs",
+    "dom",
+    "element",
+    "lifecycle"
+  ],
+  "author": "Martin Jurča <mjurca@centrum.cz>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jurca/react-dom-observe/issues"
+  },
+  "homepage": "https://github.com/jurca/react-dom-observe#readme"
+}
