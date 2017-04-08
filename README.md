@@ -93,6 +93,32 @@ class Foo extends React.Component {
 }
 ```
 
+In case you are referring to a component, but need the component's root element
+instead, you may set the fourth argument to `true` to resolve the component's
+instance to its DOM node (this is done using the `ReactDOM.findDOMNode()` API).
+Note that this pierces the component abstraction, and there is most likely a
+better way to what you are trying to accomplish (see
+[the React documentation](https://facebook.github.io/react/docs/react-dom.html#finddomnode)
+for more info).
+
+```javascript
+class Foo extends React.Component {
+  render() {
+    return (
+      <FooBar ref={observe(this, this.onDidMount, this.onDidUnmount, true)}/>
+    )
+  }
+
+  onDidMount(fooBarRootElement) {
+    // do something
+  }
+
+  onDidUnmount(fooBarRootElement) {
+    // do something
+  }
+}
+```
+
 ### Usage in functional components
 
 There is also a shorthand available for use in functional React components.
