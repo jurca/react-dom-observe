@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jurca/react-dom-observe.svg?branch=master)](https://travis-ci.org/jurca/react-dom-observe)
+
 # react-dom-observe
 
 Utility for easier monitoring of the lifecycle of React-created DOM elements
