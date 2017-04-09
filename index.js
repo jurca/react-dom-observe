@@ -117,7 +117,7 @@ const observe = (context, onMount, onUnmount = null, onlyElement = false) => {
       lastDomElement = null
     }
   }
-  storeReCallback(context, onMount, onUnmount, onlyElement, domRefHandler)
+  storeRefCallback(context, onMount, onUnmount, onlyElement, domRefHandler)
 
   return domRefHandler
 }
@@ -214,7 +214,7 @@ function retrieveRefCallback(context, onMount, onUnmount, onlyElement) {
  * @param {RefCallback} refCallback The generated ref callback to store in the
  *        cache.
  */
-function storeReCallback(
+function storeRefCallback(
   context, onMount, onUnmount, onlyElement, refCallback
 ) {
   const contextCache = prepareContextCache(context)
