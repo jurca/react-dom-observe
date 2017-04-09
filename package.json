@@ -33,5 +33,16 @@
   "bugs": {
     "url": "https://github.com/jurca/react-dom-observe/issues"
   },
-  "homepage": "https://github.com/jurca/react-dom-observe#readme"
+  "homepage": "https://github.com/jurca/react-dom-observe#readme",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
 }
