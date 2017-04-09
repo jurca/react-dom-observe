@@ -293,9 +293,9 @@ function prepareContextCache(context) {
     let contextCache = cache.bound.get(context)
     if (!contextCache) {
       contextCache = {
-        mounting: new WeakSet(),
-        unmounting: new WeakSet(),
-        full: new WeakSet(),
+        mounting: new WeakMap(),
+        unmounting: new WeakMap(),
+        full: new WeakMap(),
       }
       cache.bound.set(context, contextCache)
     }

@@ -5,14 +5,15 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^3.17.0"
+    "eslint": "^3.17.0",
+    "jasmine-node": "^1.14.5"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/jasmine-node/bin/jasmine-node *Spec.js"
   },
   "repository": {
     "type": "git",

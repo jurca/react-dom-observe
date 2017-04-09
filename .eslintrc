@@ -145,7 +145,7 @@
     "max-depth": ["error", 3],
     "max-len": ["error", { "code": 80 }],
     "max-lines": ["error", { "skipBlankLines": true, "skipComments": true }],
-    "max-nested-callbacks": ["error", 2],
+    "max-nested-callbacks": ["error", 4],
     "max-params": ["error", 9],
     "max-statements-per-line": "error",
     "max-statements": ["error", 30],
