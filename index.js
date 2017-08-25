@@ -1,5 +1,7 @@
 'use strict'
 
+exports.__esModule = true // eslint-disable-line no-underscore-dangle
+
 const React = require('react')
 const ReactDOM = require('react-dom')
 

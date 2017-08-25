@@ -1,5 +1,7 @@
 'use strict'
 
+exports.__esModule = true // eslint-disable-line no-underscore-dangle
+
 const boundObserve = require('./index').default
 
 // We'll use an arrow function here to prevent calling it with the new operator
