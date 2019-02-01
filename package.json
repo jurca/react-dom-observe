@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^3.17.0",
-    "jasmine-node": "^1.14.5"
+    "eslint": "^5.12.1",
+    "jasmine-node": "^1.16.2"
   },
   "peerDependencies": {
     "react": "*",
