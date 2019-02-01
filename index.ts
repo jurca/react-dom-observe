@@ -29,11 +29,11 @@ const cache = {
  * returned callback cannot be used for more that a single referenced element /
  * component.
  */
-export default <T extends undefined | object>(
+export default <T extends null | object>(
   context: T,
   onMount: null | Listener<T>,
-  onUnmount: null | Listener<T>,
-  onlyElement: boolean,
+  onUnmount: null | Listener<T> = null,
+  onlyElement: boolean = false,
 ): RefCallback => {
   if (process.env.NODE_ENV !== "production") {
     validateInput(context, onMount, onUnmount, onlyElement)
@@ -76,7 +76,7 @@ export default <T extends undefined | object>(
  * Validates the input for the <code>observe</code> function. This function
  * should not be invoked in production in order to achieve better performance.
  */
-function validateInput<T extends void | object>(
+function validateInput<T extends null | object>(
   context: T,
   onMount: null | Listener<T>,
   onUnmount: null | Listener<T>,
@@ -104,7 +104,7 @@ function validateInput<T extends void | object>(
  * Retrieves the previously generated ref callback for the provided combination
  * of context, listeners and <code>onlyElement</code> flag from the cache.
  */
-function retrieveRefCallback<T extends void | object>(
+function retrieveRefCallback<T extends null | object>(
   context: T,
   onMount: null | Listener<T>,
   onUnmount: null | Listener<T>,
@@ -131,7 +131,7 @@ function retrieveRefCallback<T extends void | object>(
 /**
  * Stores the generated ref callback within the cache.
  */
-function storeRefCallback<T extends void | object>(
+function storeRefCallback<T extends null | object>(
   context: T,
   onMount: null | Listener<T>,
   onUnmount: null | Listener<T>,
@@ -188,7 +188,7 @@ function prepareFullCycleCacheRefMap(
  * Prepares the cache for the provided context object for use (storing the
  * generated ref callbacks).
  */
-function prepareContextCache<T extends void | object>(context: T): IRefCallbacksCache {
+function prepareContextCache<T extends null | object>(context: T): IRefCallbacksCache {
   if (context) {
     let contextCache = cache.bound.get(context as object)
     if (!contextCache) {

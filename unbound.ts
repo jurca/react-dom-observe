@@ -15,5 +15,5 @@ export default (
   onUnmount: null | Listener<void> = null,
   onlyElement: boolean = false,
 ): RefCallback => (
-  observe(undefined, onMount, onUnmount, onlyElement)
+  observe(null, onMount, onUnmount, onlyElement)
 )
