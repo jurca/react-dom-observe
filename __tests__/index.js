@@ -1,25 +1,18 @@
-/* eslint-env jasmine */
-
-'use strict'
-
-const observe = require('./index').default
+const observe = require('..').default
 const ReactDOM = require('react-dom')
 
-const NOOP = () => {} // eslint-disable-line no-empty-function
+const NOOP = () => {}
 
 describe('observe', () => {
   it('cannot be used a constructor', () => {
-    // eslint-disable-next-line new-cap
     expect(() => new observe(null, NOOP)).toThrow()
   })
 
   it('rejects anything except a null or an object as context', () => {
     expect(() => observe(true, NOOP)).toThrow()
-    // eslint-disable-next-line no-magic-numbers
     expect(() => observe(1, NOOP)).toThrow()
     expect(() => observe('1', NOOP)).toThrow()
     expect(() => observe(Symbol('1'), NOOP)).toThrow()
-    // eslint-disable-next-line no-undefined
     expect(() => observe(undefined, NOOP)).toThrow()
 
     observe(null, NOOP)
@@ -30,11 +23,9 @@ describe('observe', () => {
 
   it('rejects anything except a callback or a null as mount callback', () => {
     expect(() => observe(null, true)).toThrow()
-    // eslint-disable-next-line no-magic-numbers
     expect(() => observe(null, 1)).toThrow()
     expect(() => observe(null, '1')).toThrow()
     expect(() => observe(null, Symbol('1'))).toThrow()
-    // eslint-disable-next-line no-undefined
     expect(() => observe(null, undefined)).toThrow()
 
     observe(null, null, NOOP)
@@ -45,7 +36,6 @@ describe('observe', () => {
     'rejects anything except a callback or a null as unmount callback',
     () => {
       expect(() => observe(null, NOOP, true)).toThrow()
-      // eslint-disable-next-line no-magic-numbers
       expect(() => observe(null, NOOP, 1)).toThrow()
       expect(() => observe(null, NOOP, '1')).toThrow()
       expect(() => observe(null, NOOP, Symbol('1'))).toThrow()
@@ -53,13 +43,12 @@ describe('observe', () => {
       observe(null, null, NOOP)
       observe(null, NOOP, null)
       // undefined will be replaced by the default argument value (null)
-      observe(null, NOOP, undefined) // eslint-disable-line no-undefined
+      observe(null, NOOP, undefined)
     }
   )
 
   it('rejects anything except a boolean as the onlyElement flag', () => {
     expect(() => observe(null, NOOP, null, null)).toThrow()
-      // eslint-disable-next-line no-magic-numbers
     expect(() => observe(null, NOOP, null, 1)).toThrow()
     expect(() => observe(null, NOOP, null, '1')).toThrow()
     expect(() => observe(null, NOOP, null, Symbol('1'))).toThrow()
@@ -67,7 +56,7 @@ describe('observe', () => {
     observe(null, NOOP, null, false)
     observe(null, NOOP, null, true)
     // undefined will be replaced by the default argument value (false)
-    observe(null, NOOP, null, undefined) // eslint-disable-line no-undefined
+    observe(null, NOOP, null, undefined)
   })
 
   it('rejects settings both mount and unmount callbacks to null', () => {
@@ -80,7 +69,6 @@ describe('observe', () => {
     expect(observe(null, NOOP).length).toBe(EXPECTED_ARITY)
   })
 
-  // eslint-disable-next-line complexity
   it('caches the returned ref callback', () => {
     const context1 = null
     const context2 = {}
@@ -122,15 +110,15 @@ describe('observe', () => {
       const context = {}
       let calledMount = false
       let calledUnmount = false
-      const mount = function mount() { // eslint-disable-line func-style
-        expect(this).toBe(context) // eslint-disable-line no-invalid-this
+      const mount = function mount() {
+        expect(this).toBe(context)
         if (calledMount) {
           throw new Error('The mount callback must be called only once')
         }
         calledMount = true
       }
-      const unmount = function unmount() { // eslint-disable-line func-style
-        expect(this).toBe(context) // eslint-disable-line no-invalid-this
+      const unmount = function unmount() {
+        expect(this).toBe(context)
         if (calledUnmount) {
           throw new Error('The unmount callback must be called only once')
         }
@@ -157,12 +145,12 @@ describe('observe', () => {
     refCallback(null)
 
     function mount(...args) {
-      expect(args.length).toBe(1) // eslint-disable-line no-magic-numbers
+      expect(args.length).toBe(1)
       expect(args.pop()).toBe(node)
     }
 
     function unmount(...args) {
-      expect(args.length).toBe(1) // eslint-disable-line no-magic-numbers
+      expect(args.length).toBe(1)
       expect(args.pop()).toBe(node)
     }
   })

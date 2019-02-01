@@ -1,15 +1,10 @@
-/* eslint-env jasmine */
-
-'use strict'
-
-const observe = require('./unbound').default
+const observe = require('../unbound').default
 const ReactDOM = require('react-dom')
 
-const NOOP = () => {} // eslint-disable-line no-empty-function
+const NOOP = () => {}
 
 describe('observe', () => {
   it('cannot be used a constructor', () => {
-    // eslint-disable-next-line new-cap
     expect(() => new observe(NOOP)).toThrow()
   })
 

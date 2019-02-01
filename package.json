@@ -5,15 +5,24 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "jasmine-node": "^1.16.2"
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.7.22",
+    "@types/react-dom": "^16.0.11",
+    "jest": "^24.0.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
   },
   "scripts": {
-    "test": "node_modules/jasmine-node/bin/jasmine-node *Spec.js"
+    "build": "rm -rf dist && npm test && npm run compile",
+    "compile": "tsc --project tsconfig.json --outDir dist",
+    "test": "tslint --project tsconfig.json && jest",
+    "prepublish": "echo 'Use npm run publish-package' && exit 1"
   },
   "repository": {
     "type": "git",
