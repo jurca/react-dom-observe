@@ -4,6 +4,7 @@
     "target": "esnext",
     "module": "esnext",
     "locale": "en",
+    "moduleResolution": "node",
     "newLine": "lf",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
