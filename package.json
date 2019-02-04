@@ -4,7 +4,7 @@
   "description": "Utility for observing the lifecycle of DOM elements through React refs.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && npm test && npm run compile",
+    "build": "rm -rf dist && npm test && npm run compile && cp package.json README.md dist/",
     "compile": "tsc --project tsconfig.json --outDir dist",
     "test": "tslint --project tsconfig.json && jest",
     "prepublishOnly": "echo 'Use npm run publish-package' && exit 1"
