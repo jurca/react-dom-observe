@@ -3,7 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "locale": "en",
     "moduleResolution": "node",
     "newLine": "lf",
