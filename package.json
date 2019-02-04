@@ -3,28 +3,11 @@
   "version": "0.1.1",
   "description": "Utility for observing the lifecycle of DOM elements through React refs.",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "@types/jest": "^23.3.13",
-    "@types/node": "^10.12.21",
-    "@types/react": "^16.7.22",
-    "@types/react-dom": "^16.0.11",
-    "jest": "^24.0.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.1"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  },
   "scripts": {
     "build": "rm -rf dist && npm test && npm run compile",
     "compile": "tsc --project tsconfig.json --outDir dist",
     "test": "tslint --project tsconfig.json && jest",
-    "prepublish": "echo 'Use npm run publish-package' && exit 1"
+    "prepublishOnly": "echo 'Use npm run publish-package' && exit 1"
   },
   "repository": {
     "type": "git",
@@ -47,6 +30,23 @@
   "homepage": "https://github.com/jurca/react-dom-observe#readme",
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.7.22",
+    "@types/react-dom": "^16.0.11",
+    "jest": "^24.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "engines": {
     "node": ">=6"
