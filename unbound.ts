@@ -10,10 +10,10 @@ import observe, {Listener, RefCallback} from "./index.js"
  * returned callback cannot be used for more that a single referenced element /
  * component.
  */
-export default (
-  onMount: null | Listener<void>,
-  onUnmount: null | Listener<void> = null,
+export default <R extends React.Component | Element>(
+  onMount: null | Listener<void, R>,
+  onUnmount: null | Listener<void, R> = null,
   onlyElement: boolean = false,
-): RefCallback => (
+): RefCallback<R> => (
   observe(null, onMount, onUnmount, onlyElement)
 )
