@@ -1,6 +1,6 @@
 {
   "name": "@jurca/react-dom-observe",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utility for observing the lifecycle of DOM elements through React refs.",
   "main": "index.js",
   "types": "index.d.ts",
